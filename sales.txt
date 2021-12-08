@@ -1,0 +1,5 @@
+
+Name: GitHub
+price of 0.04 Kg of Pythob is: 80.0
+Total is :80.0
+--------------------
