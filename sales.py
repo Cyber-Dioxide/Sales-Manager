@@ -35,8 +35,10 @@ def sales():
     item_num = int(input(Fore.LIGHTBLUE_EX + "\nEnter quantity of items: "))
 
     file = open("sales.txt", "a+")
+    file.write("\nName: " + name)
+    file.write(f"\nDate: {datetime.datetime.today()}")
+    file.write("\nTime: "+ datetime.datetime.today().strftime("%T"))
 
-    file.write("\nName: " + name + "\n")
     for i in range(1, item_num + 1):
         ran = random.choice(all_col)
         num = input(ran + f"\nEnter name of item {i}: ")
