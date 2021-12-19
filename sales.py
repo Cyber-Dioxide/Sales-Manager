@@ -77,7 +77,7 @@ def sales():
 
 cont =" "
 while cont != "n" and "no":
-    print(Fore.LIGHTYELLOW_EX + "\n\t\t[1] Perform sale\n\t\t[2] Exit\n ")
+    print(Fore.LIGHTYELLOW_EX + "\n\t\t[1] Sales-Manager\n\t\t[2] Exit\n ")
 
     choice = input(ran + "Enter your choice: ")
     if choice == "1":
