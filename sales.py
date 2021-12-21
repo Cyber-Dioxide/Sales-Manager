@@ -2,21 +2,22 @@ import sys
 import random
 import pyfiglet
 from colorama import Fore,Style
-import os
+import os,datetime
 all_col= [Style.BRIGHT+Fore.RED, Style.BRIGHT+Fore.YELLOW, Style.BRIGHT+Fore.LIGHTBLUE_EX, Style.BRIGHT+Fore.LIGHTCYAN_EX,Style.BRIGHT+Fore.LIGHTMAGENTA_EX,Style.BRIGHT+Fore.LIGHTYELLOW_EX]
 
 ran = random.choice(all_col)
 
 def banner():
-        os.system("clear")
+    os.system("clear")
 
-        print(ran, pyfiglet.figlet_format("Sales\nManager"))
-        print(ran + "\n\t\tV_1.2\t\n\n")
+    print(ran, pyfiglet.figlet_format("\f\tSales\n\tManager"))
+    print(ran + "\t\tV_2.0\t\n\n")
+    print("*" * 63)
 
-        print(Fore.CYAN, "- " * 4, " [+] Follow me on Instagram @saadkhan041 ", "- " * 4)
-        print(Fore.LIGHTYELLOW_EX, "\n", "- " * 4, " [+] Follow me on Instagram @coding_memz ", "- " * 4)
-        print(Fore.LIGHTRED_EX, "\n", "- " * 4, "[+] Github: https://github.com/Saadkhan041/ ", "- " * 3)
-
+    print(Style.BRIGHT + Fore.LIGHTCYAN_EX, "\n", "- " * 4, " [+] Follow me on Instagram @saadkhan041 ", "- " * 4)
+    print(Style.BRIGHT + Fore.LIGHTYELLOW_EX, "\n", "- " * 4, " [+] Follow me on Instagram @coding_memz ", "- " * 4)
+    print(Style.BRIGHT + Fore.LIGHTRED_EX, "\n", "- " * 4, "[+] Github: https://github.com/Saadkhan041/ ", "- " * 3)
+    print("\n", "*" * 63)
 
 banner()
 
@@ -33,11 +34,11 @@ total = []
 def sales():
     name = input(Fore.LIGHTYELLOW_EX + "\nEnter name of customer: ")
     item_num = int(input(Fore.LIGHTBLUE_EX + "\nEnter quantity of items: "))
-
     file = open("sales.txt", "a+")
-    file.write("\nName: " + name)
+    file.write("\nName: " + name + "\n")
     file.write(f"\nDate: {datetime.datetime.today()}")
     file.write("\nTime: "+ datetime.datetime.today().strftime("%T"))
+
 
     for i in range(1, item_num + 1):
         ran = random.choice(all_col)
@@ -72,17 +73,28 @@ def sales():
     print(f"Total is: {sum(total)}\n\n\t" + "File sales.txt is updated successfully!")
 
     file.write(f"Total is :{sum(total)}")
-    file.write("\n" + "-" * 20 + "\n")
+    file.write("\n" + "-" * 50 + "\n")
     print("\nSave all details in sales.txt")
+
+def view():
+    file = open("sales.txt", "r")
+    print(ran + "\n\tThis is what i've found!\n")
+
+    print(all_col[2%6] + file.read())
+
 
 cont =" "
 while cont != "n" and "no":
-    print(Fore.LIGHTYELLOW_EX + "\n\t\t[1] Sales-Manager\n\t\t[2] Exit\n ")
+    print(Fore.LIGHTYELLOW_EX + "\n\t\t[1] Sales Manager\n\t\t[2] Check Database\n\t\t[3] Exit\n ")
 
     choice = input(ran + "Enter your choice: ")
     if choice == "1":
         sales()
+
     elif choice == "2":
+        view()
+
+    elif choice == "3":
         print(ran + "\n\tDont Forget to do following tasks :-)\t\n")
         print(Fore.CYAN, "- " * 4, " [+] Follow me on Instagram @saadkhan041 ", "- " * 4)
         print(Fore.LIGHTYELLOW_EX, "\n", "- " * 4, " [+] Follow me on Instagram @coding_memz ", "- " * 4)
