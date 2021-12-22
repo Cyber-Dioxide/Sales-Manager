@@ -11,7 +11,7 @@ def banner():
     os.system("clear")
 
     print(ran, pyfiglet.figlet_format("\f\tSales\n\tManager"))
-    print(ran + "\t\tV_2.0\t\n\n")
+    print(ran + "\t\tV_2.7.0 'Final Release'\t\n\n")
     print("*" * 63)
 
     print(Style.BRIGHT + Fore.LIGHTCYAN_EX, "\n", "- " * 4, " [+] Follow me on Instagram @saadkhan041 ", "- " * 4)
@@ -35,9 +35,9 @@ def sales():
     name = input(Fore.LIGHTYELLOW_EX + "\nEnter name of customer: ")
     item_num = int(input(Fore.LIGHTBLUE_EX + "\nEnter quantity of items: "))
     file = open("sales.txt", "a+")
-    file.write("\nName: " + name + "\n")
-    file.write(f"\nDate: {datetime.datetime.today()}")
-    file.write("\nTime: "+ datetime.datetime.today().strftime("%T"))
+    file.write("\n\t\tName: " + name + "\n\n")
+    file.write(f"\n\t\tDate: {datetime.date.today()}")
+    file.write("\n\t\tTime: "+ datetime.datetime.today().strftime("%T") + "\n")
 
 
     for i in range(1, item_num + 1):
@@ -65,16 +65,16 @@ def sales():
             k = r * t
         print(ran + f"price of {t} Kg of {q} is: {r * t}\n")
 
-        file.write(f"price of {t} Kg of {q} is: {r * t}\n")
+        file.write(f"\nprice of {t} Kg of {q} is: {r * t}\n")
 
 
         total.append(k)
 
     print(f"Total is: {sum(total)}\n\n\t" + "File sales.txt is updated successfully!")
 
-    file.write(f"Total is :{sum(total)}")
+    file.write(f"\nTotal is :{sum(total)}")
     file.write("\n" + "-" * 50 + "\n")
-    print("\nSave all details in sales.txt")
+    print("\nSaved all details in sales.txt")
 
 def view():
     file = open("sales.txt", "r")
