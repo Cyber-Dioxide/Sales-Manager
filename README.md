@@ -9,6 +9,6 @@ Manage all your calculations on termux or Linux. For those who wants to keep dai
 5. python3 sales.py
 
 # Help
-for any support iam mostly actine on Instagram @coding_memz and @saadkhan041
+for any support iam mostly actine on Instagram @cyber_dioxide & @cyber_dioxide_
 
 
